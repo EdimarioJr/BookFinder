@@ -1,0 +1,7 @@
+<div class="book__card">
+  <img [src]="imageLinks.thumbnail"/>
+  <p>{{ title }}</p>
+  <p *ngFor="let author of authors">{{ author }}</p>
+  <p>{{ publishedDate }}</p>
+  <p>{{ publisher }}</p>
+</div>

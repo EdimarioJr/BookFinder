@@ -1,0 +1,23 @@
+
+section::before{
+    content: '';
+    height: 80px;
+    width: 100%;
+    background-color: var(--main-color-lighter);
+}
+
+input{
+    padding: 20px 20px;
+    width: 50%;
+    min-width: 330px;
+    border-radius: 5px;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    top: -30px;
+    border: none;
+    font-size: 18px;
+    box-shadow: 5px 5px 25px black;
+}
