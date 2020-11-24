@@ -1,1 +1,13 @@
-<p>books-container works!</p>
+
+<div class="container">
+<section *ngIf="searchedBooks.length !==0; else noResults" class="book__grid">
+    <a *ngFor="let book of filterBooks(searchedBooks)" routerLink="['book' , book.id]" >
+        <app-book-card  [bookData]="book"></app-book-card>
+    </a>
+    
+</section>
+
+<ng-template class="centralize" #noResults> 
+    <h2>No results yet...</h2>
+</ng-template>
+</div>

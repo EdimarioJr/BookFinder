@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BooksContainerComponent } from './components/books-container/books-container.component';
 import { BookCardComponent } from './components/book-card/book-card.component';
-import { BookService } from './book.service';
+import { BookPipe } from './book.pipe';
+import { BookDetailComponent } from './components/book-detail/book-detail.component';
 
 @NgModule({
-  declarations: [BooksContainerComponent, BookCardComponent],
+  declarations: [BooksContainerComponent, BookCardComponent, BookPipe, BookDetailComponent],
   imports: [CommonModule],
-  providers: [BookService],
-  exports: [BooksContainerComponent],
+  exports: [BooksContainerComponent, BookDetailComponent],
 })
 export class BookModule {}

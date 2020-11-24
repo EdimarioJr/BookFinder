@@ -14,11 +14,12 @@ export class BookCardComponent implements OnInit {
   authors: String[] = [];
   publishedDate: String = '';
   publisher: String = '';
-  imageLinks: Object = {};
+  imageLinks: any = {};
 
   constructor() {}
 
   ngOnInit(): void {
+    console.log(this.bookData)
     const {
       id,
       title,

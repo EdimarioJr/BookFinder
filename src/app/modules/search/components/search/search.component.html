@@ -1,7 +1,9 @@
 <section class="centralize">
   <input
     type="text"
-    [(ngModel)]="search"
+    #inputSearch
+    [value]="search"
+    (input)="setSearch(inputSearch.value)"
     placeholder="Which book are you wanting to read today?"
   />
   <h3>Searching for : {{ search }}</h3>
