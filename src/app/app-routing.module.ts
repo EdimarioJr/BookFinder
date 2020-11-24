@@ -5,8 +5,8 @@ import { BookDetailComponent } from './modules/book/components/book-detail/book-
 import { BooksContainerComponent } from './modules/book/components/books-container/books-container.component';
 
 const routes: Routes = [
-  { path: '', component: BooksContainerComponent },
-  { path: 'book/:id', component: BookDetailComponent },
+  { path: '', component: BooksContainerComponent, pathMatch: 'full' },
+  { path: 'book-detail/:id', component: BookDetailComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,10 @@
+.pagination-bar{
+    width: 300px;
+    height: 200px;
+}
+
+button{
+    background-color: var(--button-orange);
+    display: grid;
+    place-items: center;
+}

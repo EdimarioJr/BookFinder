@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BookService } from '../../book.service';
 
 @Component({
   selector: 'app-book-detail',
@@ -8,10 +9,24 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BookDetailComponent implements OnInit {
   id: String = '';
+  bookInfo!: any;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private bookService: BookService
+  ) {}
 
   ngOnInit(): void {
     this.id = String(this.route.snapshot.paramMap.get('id'));
+    this.bookService.getSearchSubject().subscribe((value) => {
+      this.bookInfo = value;
+      console.log(this.bookInfo);
+    });
+    this.bookService.findOneVolume(this.id);
   }
+  /*
+  ngOnDestroy(): void {
+    this.bookService.getSearchSubject().unsubscribe();
+  }
+  */
 }

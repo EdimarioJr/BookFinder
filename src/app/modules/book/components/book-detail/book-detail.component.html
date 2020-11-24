@@ -1,1 +1,33 @@
-<p>book-detail works! {{ id }}</p>
+<div class="container">
+  <section class="detail-grid">
+    <div class="general">
+      <h3>{{ bookInfo.title }}</h3>
+      <img
+        src="{{ bookInfo.imageLinks.thumbnail }}"
+        alt="{{ bookInfo.title }} cover"
+      />
+      <div class="row">
+        <p class="sub">Authors:</p>
+        <p>{{ bookInfo.authors }}</p>
+      </div>
+      <div class="row">
+        <p class="sub">Publisher:</p>
+        <p>{{ bookInfo.publisher }}</p>
+      </div>
+      <div class="row">
+        <p class="sub">Published Date:</p>
+        <p>{{ bookInfo.publishedDate }}</p>
+      </div>
+      <div class="row">
+        <p class="sub">Number of Pages:</p>
+        <p>{{ bookInfo.pageCount }}</p>
+      </div>
+    </div>
+    <div class="description">
+      <h3>Description</h3>
+      <p>
+        {{ bookInfo.description }}
+      </p>
+    </div>
+  </section>
+</div>

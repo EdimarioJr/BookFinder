@@ -46,3 +46,9 @@ h6 {
     margin: 0;
     padding: 0;
 }
+
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

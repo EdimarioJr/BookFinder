@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Book } from '../../book';
 import { BookService } from '../../book.service';
 
@@ -7,7 +7,7 @@ import { BookService } from '../../book.service';
   templateUrl: './books-container.component.html',
   styleUrls: ['./books-container.component.css'],
 })
-export class BooksContainerComponent implements OnInit {
+export class BooksContainerComponent implements OnInit{
   // Os livros retornados pela pesquisa atual
   searchedBooks: Book[] = [];
 
@@ -23,6 +23,11 @@ export class BooksContainerComponent implements OnInit {
     console.log(this.searchedBooks);
   }
 
+  /*
+  ngOnDestroy(): void {
+    this.bookService.getSearchSubject().unsubscribe();
+  }
+  */
   // filtrando os valores da pesquisa no formato desejável
   filterBooks(booksAPI: any) {
     return booksAPI.map((bookAPI: any) => {

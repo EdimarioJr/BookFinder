@@ -4,10 +4,16 @@ import { BooksContainerComponent } from './components/books-container/books-cont
 import { BookCardComponent } from './components/book-card/book-card.component';
 import { BookPipe } from './book.pipe';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [BooksContainerComponent, BookCardComponent, BookPipe, BookDetailComponent],
-  imports: [CommonModule],
+  declarations: [
+    BooksContainerComponent,
+    BookCardComponent,
+    BookPipe,
+    BookDetailComponent,
+  ],
+  imports: [CommonModule, RouterModule],
   exports: [BooksContainerComponent, BookDetailComponent],
 })
 export class BookModule {}
