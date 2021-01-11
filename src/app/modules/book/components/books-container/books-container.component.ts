@@ -7,9 +7,10 @@ import { BookService } from '../../book.service';
   templateUrl: './books-container.component.html',
   styleUrls: ['./books-container.component.css'],
 })
-export class BooksContainerComponent implements OnInit{
+export class BooksContainerComponent implements OnInit {
   // Os livros retornados pela pesquisa atual
   searchedBooks: Book[] = [];
+  totalItems: number = 0;
 
   constructor(private bookService: BookService) {}
 
@@ -18,9 +19,11 @@ export class BooksContainerComponent implements OnInit{
     // usando para fazer a comunicação desse componente e o componente search
     // como funcao next atribuimos o valor que vamos receber ao searchedBooks
     this.bookService.getSearchSubject().subscribe((value: any) => {
-      this.searchedBooks = value;
+      if (value.items) {
+        this.searchedBooks = value.items;
+        this.totalItems = value.totalItems;
+      }
     });
-    console.log(this.searchedBooks);
   }
 
   /*

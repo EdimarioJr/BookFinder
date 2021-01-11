@@ -1,8 +1,5 @@
-
-
 <div class="pagination-bar row">
-    <button *ngFor="let item of [].constructor(totalPages); let i = index">
-        {{ i }}
-    </button>
+  <button *ngFor="let item of visiblePages" (click)="setPage(item)">
+    {{ item + 1 }}
+  </button>
 </div>
-    

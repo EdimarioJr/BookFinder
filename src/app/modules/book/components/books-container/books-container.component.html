@@ -9,7 +9,10 @@
       [bookData]="book"
     ></app-book-card>
   </section>
-
+  <app-pagination-bar
+    *ngIf="searchedBooks.length !== 0"
+    [totalPages]="totalItems | nPages"
+  ></app-pagination-bar>
   <ng-template class="centralize" #noResults>
     <h2>No results yet...</h2>
   </ng-template>

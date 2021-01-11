@@ -20,9 +20,10 @@ export class BookDetailComponent implements OnInit {
     this.id = String(this.route.snapshot.paramMap.get('id'));
     this.bookService.getSearchSubject().subscribe((value) => {
       this.bookInfo = value;
-      console.log(this.bookInfo);
     });
     this.bookService.findOneVolume(this.id);
+    
+   
   }
   /*
   ngOnDestroy(): void {

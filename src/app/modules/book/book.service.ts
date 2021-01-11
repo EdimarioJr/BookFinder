@@ -22,7 +22,7 @@ export class BookService {
 
   constructor(private http: HttpClient) {}
 
-  setSearch(query: String, page: Number) {
+  setSearch(query: String, page?: number) {
     if (!page) page = 0;
     // Metódos do pacote HTTP do Angular SEMPRE retornão Observables.
     // Por isso fazemos o fetch num recurso e aplicamos chamamos o subscribe no retorno
@@ -33,14 +33,18 @@ export class BookService {
     // enquanto um observable é Unicast
     this.actualQuery = query;
     this.http
-      .get<any>(`${environment.googleBooksAPI}?q=${query}&startIndex=${page}`)
-      .subscribe((data) => {
-        data = data.items;
-        this.searchedBooks.next(data);
-      });
+      .get<any>(`${environment.googleBooksAPI}?q=${query}&startIndex=${page * 10}`)
+      .subscribe(
+        (data) => {
+          this.searchedBooks.next(data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   }
 
-  changePage(page: Number): void {
+  changePage(page: number): void {
     this.setSearch(this.actualQuery, page);
   }
 

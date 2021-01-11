@@ -1,5 +1,5 @@
 <div class="container">
-  <section class="detail-grid">
+  <section *ngIf="bookInfo" class="detail-grid">
     <div class="general">
       <h3>{{ bookInfo.title }}</h3>
       <img

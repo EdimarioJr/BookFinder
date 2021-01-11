@@ -5,6 +5,8 @@ import { BookCardComponent } from './components/book-card/book-card.component';
 import { BookPipe } from './book.pipe';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { RouterModule } from '@angular/router';
+import { PaginationModule } from '../pagination/pagination.module';
+import { NPagesPipe } from './n-pages.pipe';
 
 @NgModule({
   declarations: [
@@ -12,8 +14,9 @@ import { RouterModule } from '@angular/router';
     BookCardComponent,
     BookPipe,
     BookDetailComponent,
+    NPagesPipe,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, PaginationModule],
   exports: [BooksContainerComponent, BookDetailComponent],
 })
 export class BookModule {}
